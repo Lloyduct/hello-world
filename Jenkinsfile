@@ -1,7 +1,7 @@
 pipeline {
       agent any 
              stages {
-                    stages('One') {
+                    stage('One') {
                              steps {
                                    echo 'Hi, this is lloyd this pipeline'
 
@@ -23,12 +23,13 @@ pipeline {
                                    echo "Hello"
                            }
                     }
-           stage('Four') {
-                   parallel {
+stage('Four') {
+                parallel {
                        stage('Unit Test') {
                                           steps {
                                                 echo "Running the unit test...."
                                           }
+                       }
                        stage('Integration test') {
                                           agent {
                                                 docker {

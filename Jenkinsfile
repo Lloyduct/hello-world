@@ -23,11 +23,11 @@ pipeline {
                                    echo "Hello"
                            }
                     }
-stage('Four') {
-                parallel {
-                       stage('Unit Test') {
-                                          steps {
-                                                echo "Running the unit test...."
+                    stage('Four') {
+                             parallel {
+                                stage('Unit Test') {
+                                  steps {
+                                             echo "Running the unit test...."
                                           }
                        }
                        stage('Integration test') {
@@ -37,10 +37,10 @@ stage('Four') {
                                                         image 'ubuntu'
                                                 }
                                          }
-                                         steps {
+                                       steps {
                                                echo 'Running the integration test...'
                                          }
-                      }
+                    }
                }
 }
 }
